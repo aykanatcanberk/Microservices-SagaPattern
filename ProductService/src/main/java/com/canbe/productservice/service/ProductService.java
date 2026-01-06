@@ -1,15 +1,20 @@
 package com.canbe.productservice.service;
 
-import com.canbe.productservice.client.InventoryClient;
-import com.canbe.productservice.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import com.canbe.productservice.dto.ProductRequest;
+import com.canbe.productservice.entity.Product;
 
-@Service
-@RequiredArgsConstructor
-@Slf4j
-public class ProductService {
-    private final ProductRepository productRepository;
-    private final InventoryClient inventoryClient;
+import java.util.List;
+import java.util.Optional;
+
+public interface ProductService {
+
+    List<Product> getAllProducts();
+
+    Optional<Product> getProductById(Long id);
+
+    Product createProduct(ProductRequest request);
+
+    Product updateProduct(Long id, ProductRequest request);
+
+    void deleteProduct(Long id);
 }
