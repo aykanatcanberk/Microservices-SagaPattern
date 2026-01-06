@@ -1,4 +1,4 @@
-package com.canbe.productservice.dto;
+package com.canbe.orderservice.exception;
 
 import java.time.LocalDateTime;
 
